@@ -1,0 +1,237 @@
+.header {
+	&__form {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	&__wrap {
+		height: 100%;
+		float:none;
+		&_right {
+			float:none;
+		}
+	}
+	&__box {
+		max-width:100%;
+		top:51px;
+	}
+}
+
+.section__box {
+	&_about {
+		width: 100%;
+		&-2 {
+			width: 100%;
+			margin-left: 0px;
+		}
+	}
+}
+
+.section {
+	&__title {
+		margin-top: 20px;
+		&_left {
+			text-align:center;
+		}
+		&_destinations {
+			font-size: 17px;
+		}
+		&_subtitle {
+			margin-bottom: 20px;
+		}
+		&_blog-header {
+			text-align: center;
+		}
+	}
+	&__description {
+		margin-top: 10px;
+		&_events {
+			padding-right: 37px;
+			padding-left: 37px;
+		}
+	}
+	&_team {
+		padding-left: 0px;
+	}
+	&__list {
+		&_company {
+			display: table;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10px;
+			&:last-child {
+				margin-top: 0px;
+			}
+		}
+		&_mobile {
+			display:table;
+			margin:0 auto;
+		}
+	}
+	&__wrap {
+		display: block;
+		text-align: center;
+	}
+	&__tag {
+		margin-right: 0px;
+		margin-top: 10px;	
+	}
+	&__picture {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__destinations {
+		min-height:200px;
+		padding:0px;
+	}
+	&-company {
+		&__box {
+			margin-top: 20px;
+		}
+	}
+	&-blog__content {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	&__avatars {
+		&_margin {
+			margin-top: 15px;
+		}
+	}
+	&__names {
+		&_margin {
+			margin-top: 15px;
+		}
+	}
+	&__btn {
+		&_margin {
+			margin-top: 10px;
+		}
+	}
+	&_profile {
+		padding-left: 0px;
+	}
+	&__logo {
+		&_profile {
+			float:none;
+			margin:0 auto;
+		}
+	}
+	&-profile {
+		&__information {
+			text-align: center;
+			margin-left: 0px;
+			margin-top: 10px;
+		}
+		&__company {
+			text-align: center;
+		}
+		&__title_blue {
+			margin-top: 20px;
+		}
+	}
+	&__video-play {
+		margin-top: 15px;
+	}
+	&-blog {
+		&__header-center {
+			display: table;
+			margin:0 auto;
+			height:auto;
+		}
+		&__padding {
+			padding:0px;
+		}
+		&__form{
+			&-search {
+				display: block;
+				margin-top: 20px;
+				&::before {
+					top:9px;
+				}
+			}
+		}
+		&__form {
+			margin: 0 auto;
+		}
+		&__left {
+			float:none;
+			padding:20px;
+		}
+		&__thumbnail {
+			width: 100%;
+		}
+		&__wrap {
+			padding:20px;
+		}
+		&__comments {
+		    &-date {
+		    	text-align: center;
+		    	float:none;
+		    }
+		}
+		&__comments-text {
+			&_hidden {
+				height: 60px;
+			}
+		}
+		&__warning {
+    		right: 20px;
+    		top: 37px;
+		}
+		&__tags {
+			display: block;
+		}
+		&__box-right {
+			float:none;
+			display: table;
+			margin:0 auto;
+		}
+		&__description {
+			margin-right: 20px;
+			margin-left: 20px;
+		}
+		&__img {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+	&-form {
+		&__wrap {
+			display: block;
+			margin-left: 0px;
+			margin-top: 20px;
+		}
+		&__btn {
+			&_blog {
+				margin-left: 0px;
+				width: 100%;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+.inbox {
+	width:100%;
+	&_border-left {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	&__description{
+		&_messages {
+		    width: calc(85% - 10px);
+		}
+	}
+}
+
+.mobile {
+	&__center {
+		display: table;
+		margin: 0 auto;
+	}
+}
+
+#map img {
+	min-height:235px;
+}

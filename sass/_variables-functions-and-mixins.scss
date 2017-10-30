@@ -1,0 +1,26 @@
+$main-color: #002d40;
+$red-color: #d4495a;
+$grey-color:#f7f7f7;
+$green-color: #33b185;
+$pink-color:#ff414d;
+$blue-color:#1aa6b7;
+
+$white-color: #fff;
+$black-color: #000;
+
+$MonRegular: "MonsterRegular";
+$MonBold: "MonsterBold";
+$MonEBold: "MonsterEBold";
+$MonMedium: "MonsterMedium";
+
+$i: 10;
+@while $i < 101 {
+    .mb-#{$i} { margin-bottom: $i + px; }
+    $i: $i + 10;
+}
+
+$i: 10;
+@while $i < 101 {
+    .mt-#{$i} { margin-top: $i + px; }
+    $i: $i + 10;
+}

@@ -1,0 +1,13 @@
+@import "variables-functions-and-mixins";
+
+::selection { background: rgba($green-color, .5); }
+* { font-family: "ProximaNova", Serif; }
+.container-fluid {max-width: 1920px;}
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.float-left { float: left; }
+.float-right { float: right; }
+
+@import 'media';
+@import "fonts";

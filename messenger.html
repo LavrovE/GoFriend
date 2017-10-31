@@ -149,7 +149,7 @@
                                                 </div>
                                                 <div class="inbox__right">
                                                     <div class="inbox__center">
-                                                        <a href="" class="section__btn section__btn_width">
+                                                        <a href="javascript:void(0);" class="section__btn section__btn_width" id="compose">
                                                             <span class="section__btn-inner">+ compose</span></a>
                                                     </div>
                                                 </div>
@@ -226,7 +226,7 @@
                                         </div>
                                     </div>
                                     <div class="inbox inbox_border-left">
-                                        <div class="inbox-box">
+                                        <div class="inbox-box inbox__allmessages">
                                             <div class="inbox__header">
                                                 <div class="inbox__left">
                                                 <input type="checkbox" class="inbox__checkbox inbox__checkbox_all">
@@ -345,7 +345,102 @@
                                             </div>
                                         </div>
                                     </div>
+
+
+
+                                    <div class="inbox-box inbox__newmessage">
+                                            <div class="inbox__header">
+                                                <div class="inbox__left">
+                                                <input type="checkbox" class="inbox__checkbox inbox__checkbox_all">
+                                                    <div class="inbox__center">
+                                                        <span class="inbox__left-inner"> NEW MESSAGE</span>
+                               
+                                                    </div>
+                                                </div>
+                                                <div class="inbox__right">
+                                                    <div class="inbox__center">
+                                                        <!-- <form action="  " class="section-blog__form">
+                                                            <div class="section-form__wrap section-form__wrap_width"><span class="section-form__select-arrow"> </span>
+                                                            <span class="section-form__select-settings"></span>
+                                                                <select name="" id="" class="section-form__select">
+
+                                                                    
+                                                                    <option value="">Mark read</option>
+                                                                    <option value="">Mark unread</option>
+                                                                    <option value="">Delete</option>
+                                                                    <option value="">Add star</option>
+                                                                    <option value="">Remove star</option>
+                                                                </select>
+                                                            </div>
+                                                        </form> -->
+                                                       <div class="dropdown">
+  <span class="dropdown__btn  dropdown__btn_width dropdown-toggle" type="button" data-toggle="dropdown">
+  <span class="dropdown__btn_inner dropdown__btn_inner_2">Mark Read</span>
+                                                            <span class="section-form__select-settings"></span>
+  <span class="section-form__select-arrow" style="margin-right:0px;"> </span></span>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown__click dropdown__click_2" href="#">Mark Unread</a></li>
+    <li><a class="dropdown__click dropdown__click_2" href="#">Delete</a></li>
+    <li><a class="dropdown__click dropdown__click_2" href="#">Add star</a></li>
+    <li><a class="dropdown__click dropdown__click_2" href="#">Remove Star</a></li>
+  </ul>
+</div>
+
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="clearfix"> </div>
+                                                
+                                            </div>
+                                        <div class="inbox__content">
+                                           
+                                      
+                                        
+                                        
+
+
+                 <div class="modal-messenger__body">
+                    <div class="form-edit__form">
+                       <form class="modal-edit__name">
+                        <div class="form-edit__wrap">
+                         <p class="form-edit__name" id="modal__name" >TO</p>
+                         <div class="relative form__edit_rightside main_input">
+                         <input type="text" class="form-edit__field input__removed" id="" value="" autocomplete="off">
+                         <div class="form-edit__names"></div>
+                         </div>
+                         </div>
+                         <div class="form-edit__wrap">
+                         <p class="form-edit__name top">MESSAGE</p>
+                         <div class="relative form__edit_rightside">
+                        <textarea rows="15" cols="55" type="text" class="form-edit__field min_he"></textarea>
+                         </div>
+                         </div>
+                       </form>
+                       
+                      
+                       
+                      <div class="inbox__form">
+                                                <form action=" " class="section-form">
+                                                    
+                                                    <button class="button section-form__btn" type="submit">SEND</button>
+                                                </form>
+                                            </div>
+                      
+                    </div>
+                 </div> 
+                                        <div class="clearfix"> </div>
+                                        </div>
+                                      
+                                    </div>
+
+
+
                                 </div>
+
+
+
+
                             </div>
                 </div>
                 </section>
@@ -354,9 +449,46 @@
         </div>
     </div>
     </div>
+     <div class="modal-edit" id="modal-messenger">
+
+           <div class="modal-edit__content">
+              <div class="modal-edit__header">
+                 <div class="modal-edit__left">
+                    <p class="modal-edit__header-text">Edit name and position</p>
+
+                 </div>
+                 <div class="modal-edit__right">
+                    <div class="modal-edit__close">&#10006;</div>
+                 </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+           </div>
+        </div>
     <div class="close-wrap"></div>
+    <div class="container">
+            
+        </div>
+
+<!-- <div class="search">
+  <input type="text" name="search" class="search-field">
+</div> -->
     <script src="js/libs.min.js"></script>
+            <!-- <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/scripts.min.js"></script> -->
     <script src="js/main.js"></script>
+   
 </body>
 
 </html>

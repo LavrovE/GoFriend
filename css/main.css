@@ -1624,6 +1624,7 @@
   min-height: 130px;
   padding-left: 13px;
   resize: vertical;
+
 }
 
 .section-form__btn {
@@ -1752,6 +1753,7 @@
 .inbox_width {
   width: 41%;
   float: left;
+
 }
 
 .inbox_border-left {
@@ -1761,7 +1763,26 @@
   width: 59%;
   padding-bottom: 40px;
 }
-
+.inbox__form_input{
+      width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #d3d3d3;
+    margin-top: 2px;
+    font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #002d40;
+}
+.inbox__form{
+      padding-left: 32px;
+    padding-right: 32px;
+}
+.inbox__form_text{
+      margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: "MonsterMedium";
+    font-size: 14px;
+}
 .inbox__head {
   padding-left: 25px;
   padding-right: 25px;
@@ -1771,23 +1792,48 @@
 .inbox__header {
   border-bottom: 1px solid #d6d6d6;
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
+     margin-left: 20px;
+    margin-right: 20px;
 }
-
+.form-edit__wrap{
+  margin-bottom: 20px;
+}
 .inbox__content {
   overflow-y: auto;
-  max-height: 353px;
+  /*max-height: 353px;*/
+ 
+}
+.inbox__allmessages .inbox__content {
   padding-left: 20px;
   padding-right: 20px;
-}
 
-.inbox__content_left-scroll {
+}
+.inbox__allmessages .inbox__send {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-right: 0px;
+}
+.inbox__newmessage .inbox__content {
+padding-left: 20px;
+padding-right: 20px;
+}
+.inbox__content {
+    overflow: initial;
+}
+textarea.form-edit__field.min_he {
+    min-height: 150px;
+}
+.inbox__newmessage .inbox__checkbox_all, .inbox__allmessages .inbox__checkbox{
+  display: none;
+}
+.inbox-box.inbox__newmessage .inbox__content_left-scroll {
   max-height: 603px;
   padding-left: 0px;
   padding-right: 0px;
 }
-
+.form-edit__names .form-edit__name_full:nth-child(1) {
+    background: #f7f7f7;
+}
 .inbox__list {
   display: none;
   position: absolute;
@@ -2145,14 +2191,35 @@
   font-size: 14px;
   color: #002d40;
 }
+.form-edit__field {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid #d3d3d3;
+  margin-top: 2px;
+  font-family: "MonsterRegular";
+  font-size: 14px;
+  line-height: 24px;
+  color: #002d40;
+  padding: 0px 8px;
 
+}
 .modal-edit__field_tag {
   max-width: 138px;
   margin-right: 25px;
 }
-
+.form-edit__name.top {
+    vertical-align: top;
+}
 .modal-edit__name {
   margin-top: 30px;
+  margin-bottom: 0px;
+  font-family: "MonsterMedium";
+  font-size: 14px;
+
+}
+.form-edit__name {
+  margin-top: 0px;
   margin-bottom: 0px;
   font-family: "MonsterMedium";
   font-size: 14px;
@@ -2346,21 +2413,52 @@
 }
 
 .gallery-pages {
-  border-top: 1px solid #d6d6d6;
-  padding-top: 17px;
+    border-top: 2px solid #002d40;
+    padding-top: 17px;
 }
+.block{
+  display: block;
+}
+.youtube_container {
+    max-height: 320px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.youtube_img_wrapper {
+    position: relative;
+    display: inline-block;
+    display: table;
+    position: relative;
+}
+.youtube_img_cross{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: block;
 
+}
+.youtube__cross {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    color: #ff414d;
+    font-size: 20px;
+    cursor: pointer;
+}
 .gallery-pages__center {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: left;
+    -ms-flex-pack: center;
+    justify-content: left;
 }
-
+.youtube_img{
+      margin: 20px 0px;
+      display: block;
+}
 .gallery-pages__list {
   text-align: center;
   max-width: 225px;
@@ -3010,7 +3108,75 @@
     min-height: 235px;
   }
 }
-
+.form-edit__names {
+    position: absolute;
+    top: 0;
+    line-height: 45px;
+    background: #fff;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 353px;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+        border-left: 1px solid #d6d6d6;
+    /*background: #f7f7f7;*/
+    border-right: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+        z-index: 15;
+        display: none;
+}
+.inbox__newmessage{
+  display: none;
+}
+.form-edit__name {
+    display: inline-block;
+    width: 20%;
+    padding-right: 10px;
+    vertical-align: middle;
+        line-height: 40px;
+}
+.form-edit__names .form-edit__soloname {
+    /*border-bottom: 1px solid #eeeeee;*/
+        display: inline-block;
+    color: #ff414d;
+    font-family: "MonsterEBold";
+    text-transform: uppercase;
+}
+.form__edit_rightside{
+  display: inline-block;
+  width: 79%;
+  vertical-align: middle;
+}
+.relative{
+  position: relative;
+}
+.form-edit__name_full {
+    padding: 15px 10px;
+    border-bottom: 1px solid #d6d6d6;
+    float: left;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+.form-edit__name_full:hover {
+background: #f7f7f7;
+}
+.form-edit__name_full {
+cursor: pointer;
+}
+.form-edit__name_full img {
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    -webkit-border-radius: 50%;
+        margin-right: 10px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.form-edit__name_full * {
+    display: inline-block;
+}
 @font-face {
   font-family: 'MonsterRegular';
   src: url(../fonts/Montserrat-Regular.ttf);

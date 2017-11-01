@@ -137,7 +137,9 @@
                                     </div>
                                     <div class="clearfix"> </div>
                                     <div class="section-profile__company">
-                                        <img src="img/aboutlogo.jpg" alt="" class="img-responsive section__logo_profile">
+                                        <div id="edit-logo">
+                                          <img src="img/aboutlogo.jpg" alt="" class="img-responsive section__logo_profile">
+                                        </div>
                                         <p class="section-profile__title section-profile__title_blue"> company<span class="section-profile__editor float-right" id="edit-company"><img src="img/change.png" alt="" class="section-profile__img"></span><br> name</p>
                                     </div>
                                 </div>
@@ -238,6 +240,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h3 class="section__title section__title_margin"> photo</h3>
+                                        <span class="section-profile__editor section-profile__editor_right" id="edit-photo"><img src="img/change.png" alt="" class="section-profile__img"></span>
                                     </div>
                                     <a href="#" class="col-md-4 col-sm-4 open_window">
                                        <span style="background-image:url(http://lorempixel.com/600/600/nature/1);" class="gallery__img"></span>
@@ -613,13 +616,54 @@
                        
                        <input name="" class="modal-edit__field youtube_link">
                          </div>
-                      
-                        <!-- <a href="https://www.youtube.com/watch?v=1aVooluAS74" target="_blank"> -->
 
-
-</a>
                        <button class="section-form__btn">Save</button>
                        <span class="modal-edit__close-text">cancel</span>
+                    </div>
+                 </div>
+           </div>
+        </div>
+
+        <div class="modal-edit" id="modal-photo">
+           <div class="modal-edit__content">
+              <div class="modal-edit__header">
+                 <div class="modal-edit__left">
+                    <p class="modal-edit__header-text">Download photo</p>
+                 </div>
+                 <div class="modal-edit__right">
+                    <div class="modal-edit__close">&#10006;</div>
+                 </div>
+              </div>
+                 <div class="modal-edit__body">
+                    <div class="modal-edit__form">
+                   
+                       <div class="modal-edit__select-option">
+
+                        <div class="modal-edit__form modal-edit__form_avatar">
+                              <span class="modal-edit__name block">Choose your post</span>
+                            <div class="modal-edit__select-option">
+                        <select class="modal-edit__select-post">
+                          <option>Wall post</option>
+                          <option>Wall post 2</option>
+                          <option>Wall post 3</option>
+                        </select>                      
+                       </div>
+
+                         <form action="upload.php" class="dropzone dz-clickable" id="my-dropzone-container_photo" method="post" enctype="multipart/form-data">
+                            <div class="dz-default dz-message">
+                              <span>Or drop files here</span>
+                            </div>
+                            <div class="test">
+                              
+                            </div>
+                         </form>
+                         <div class="dz-image_container" id="dz-image_container">
+                           
+                         </div>
+                          <button class="section-form__btn">Save</button>
+                          <span class="modal-edit__close-text">cancel</span>
+                        </div>                          
+                       </div>                    
                     </div>
                  </div>
            </div>
@@ -711,6 +755,28 @@
             <label for="btnfile" class="btn">Select Image</label>
             <input id="btnfile" type="file" name="btnfile">
         </div>
+    </form>
+    <button class="section-form__btn" id="modal-avatar_btn">Save</button>
+                       <span class="modal-edit__close-text ">cancel</span>
+
+                    </div>
+                 </div>
+           </div>
+        </div>
+        <div class="modal-edit" id="modal-logo">
+           <div class="modal-edit__content modal-edit__content_avatar">
+              <div class="modal-edit__header">
+                 <div class="modal-edit__left">
+                    <p class="modal-edit__header-text">Edit company logo</p>
+                 </div>
+                 <div class="modal-edit__right">
+                    <div class="modal-edit__close">&#10006;</div>
+                 </div>
+              </div>
+                 <div class="modal-edit__body moda  l-edit__body_avatar">
+                    <div class="modal-edit__form modal-edit__form_avatar">
+                       <form action="upload.php" class="dropzone" id="my-dropzone-container_logo" method="post" enctype="multipart/form-data">
+  
     </form>
     <button class="section-form__btn" id="modal-avatar_btn">Save</button>
                        <span class="modal-edit__close-text ">cancel</span>

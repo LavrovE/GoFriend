@@ -1641,7 +1641,10 @@
   margin-top: 20px;
   width: 120px;
 }
-
+#modal-album-new .section-form__btn{
+width: auto;
+padding: 0px 10px;
+}
 .section-form__btn_tags {
   display: inline-block;
   margin-top: 0px;
@@ -2147,10 +2150,14 @@ textarea.form-edit__field.min_he {
   font-family: "MonsterMedium";
   font-size: 14px;
 }
-
+form#my-dropzone-container_photo {
+       width: 100%;
+    height: 100px;
+}
 .modal-edit__select-option {
   font-family: "MonsterMedium";
   font-size: 14px;
+      margin-top: 10px;
 }
 
 .modal-edit__textarea {
@@ -2445,6 +2452,22 @@ textarea.form-edit__field.min_he {
     font-size: 20px;
     cursor: pointer;
 }
+select.modal-edit__select-post {
+    width: 80%;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #d3d3d3;
+    margin-top: 2px;
+    /* font-family: "MonsterRegular"; */
+    font-size: 14px;
+    line-height: 24px;
+    color: #002d40;
+    padding: 0px 8px;
+}
+
+
+
 .gallery-pages__center {
 display: -webkit-box;
     display: -webkit-flex;
@@ -2644,14 +2667,31 @@ display: -webkit-box;
   color: #002d40;
   text-transform: uppercase;
 }
-
+.dropdown-menu > li > a.dropdown__share{
+      font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #ff414d;
+    text-transform: none;
+}
+.dropdown__btn_inner.dropdown__btn_inner{
+     font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #ff414d;
+    text-transform: none;
+}
 .dropdown__click {
   font-family: "MonsterBold";
   font-size: 14px;
   color: #002d40;
   text-transform: uppercase;
 }
-
+.right{
+  text-align:right;
+}
+.modal-edit__close-text.mr {
+    margin-right: 35px;
+    margin-left: 0px;
+}
 .dropzone {
   width: 290px;
   height: 290px;
@@ -2683,6 +2723,10 @@ display: -webkit-box;
 .modal-box {
   width: 340px;
   height: 450px;
+}
+#modal-logo .modal-edit__form_avatar {
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .dz-image {
@@ -2734,6 +2778,30 @@ display: -webkit-box;
 .dz-remove {
   display: none;
 }
+
+.dz-image_container .dz-preview {
+display: inline-block;
+    width: 22%;
+    font-size: 0px;
+    height: auto;
+    margin-right: 4%;
+    margin-top: 20px;
+
+}
+.dz-image_container .dz-preview:nth-child(4n) {
+    margin-right: 0px;
+}
+.dz-image_container .dz-preview img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
   .header__box {

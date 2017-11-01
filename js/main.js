@@ -22,8 +22,14 @@ $('document').ready(function(){
     $('#edit-video').click(function(){
         $("#modal-video").toggle();
     });
+     $('#edit-photo').click(function(){
+        $("#modal-photo").toggle();
+    });
+      $('#edit-logo').click(function(){
+        $("#modal-logo").toggle();
+    });
     $('#edit-album').click(function(){
-        $("#modal-album").toggle();
+        $("#modal-album-new").toggle();
     });
     $('#edit-contacts').click(function(){
         $("#modal-contacts").toggle();
@@ -188,7 +194,11 @@ $('.input__removed').val(newInput);
         text = $(this,".dropdown__click_1").text();
         $(".dropdown__btn_inner_1").html(text);
     });
-
+    $('.dropdown__click_share').click(function(){
+        var text;
+        text = $(this,".dropdown__click_1").text();
+        $(".dropdown__btn_inner_share").html(text);
+    });
     $('.dropdown__click_2').click(function(){
         var text;
         text = $(this,".dropdown__click_2").text();
@@ -295,6 +305,73 @@ var myDropzone = new Dropzone("#my-dropzone-container", {
         });
     }
 });
+
+var myDropzonePhoto = new Dropzone("#my-dropzone-container_photo", {
+    addRemoveLinks: true,
+    thumbnailWidth : 150,
+    thumbnailHeight : 150,
+    uploadMultiple: true,
+    maxFiles: 7,
+    maxfilesexceeded: function(file) {
+        this.removeAllFiles();
+        this.addFile(file);
+    },
+    init: function () {
+        this.on('success', function (file) {
+            var $button = $('<button  class="js-open-cropper-modal" data-file-name="' + file.name + '">Crop & Upload</button>');
+            $(file.previewElement).append($button);
+            if (uploadbool == true) {
+            $( ".js-open-cropper-modal" ).trigger( "click" );
+            uploadbool = false;
+            }
+            $(".dz-default").css("display","none");
+            if(radiusbool == false) {
+                $(".dz-image img").removeClass("dz-img-radius");
+                radiusbool == true;
+            }
+
+// alert('test');
+
+        });
+        this.on("addedfile", function(file) { 
+            $('.dz-image_container').append($('.dz-preview'));
+         });
+    }
+});
+
+
+var myDropzoneLogo = new Dropzone("#my-dropzone-container_logo", {
+    addRemoveLinks: true,
+    thumbnailWidth : 200,
+    thumbnailHeight : 200,
+    uploadMultiple: false,
+    maxFiles: 1,
+    maxfilesexceeded: function(file) {
+        this.removeAllFiles();
+        this.addFile(file);
+    },
+    init: function () {
+        this.on('success', function (file) {
+            var $button = $('<button  class="js-open-cropper-modal" data-file-name="' + file.name + '">Crop & Upload</button>');
+            $(file.previewElement).append($button);
+            if (uploadbool == true) {
+            $( ".js-open-cropper-modal" ).trigger( "click" );
+            uploadbool = false;
+            }
+            $(".dz-default").css("display","none");
+            if(radiusbool == false) {
+                $(".dz-image img").removeClass("dz-img-radius");
+                radiusbool == true;
+            }
+
+// alert('test');
+
+        });
+       
+    }
+});
+
+
 
 
 

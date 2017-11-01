@@ -45,6 +45,17 @@ $('document').ready(function(){
         $("#modal-tags").toggle();
     }); 
 
+
+
+    $('#create_albums').click(function(){
+        $("#modal-album-new").hide();
+        $("#modal-album-album").show();
+        var title = $('#modal-edit__title');
+        var description = $('#modal-edit__descriprion');
+    }); 
+
+
+
 // $('.ac_results').before('#name');
 
 //     $('#name').autocomplete(['Женя', 'Витя', 'Гриша', 'Аня', 'Петя'], {
@@ -181,7 +192,7 @@ $('.input__removed').val(newInput);
   });
 
 
-
+    
 
     
 

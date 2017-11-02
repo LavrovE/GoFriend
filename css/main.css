@@ -2103,6 +2103,7 @@ textarea.form-edit__field.min_he {
   color: #ff414d;
   font-size: 20px;
   cursor: pointer;
+      padding-left: 10px;
 }
 
 .modal-edit__close-text {
@@ -2212,6 +2213,53 @@ form#my-dropzone-container_photo {
   color: #002d40;
   padding-left: 10px;
     padding-right: 10px;
+}
+.modal-edit__upbtn {
+      float: right;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: "MonsterRegular";
+        padding: 0px 14px;
+
+}
+.flex_container {
+/* Инициализируем flex */
+  display: flex;
+  -moz-display:flex;
+  -webkit-display:flex;
+  -o-display:flex;
+ 
+
+  -moz-flex-direction: row; /* Элементы внутри контейнера будут позиционироваться горизонтально */
+  -moz-align-items: stretch; /* Элементы внутри контейнера будут занимать всю его высоту */
+   -o-flex-direction: row; /* Элементы внутри контейнера будут позиционироваться горизонтально */
+  -o-align-items: stretch; /* Элементы внутри контейнера будут занимать всю его высоту */
+   -webkit-flex-direction: row; /* Элементы внутри контейнера будут позиционироваться горизонтально */
+  -webkit-align-items: stretch; /* Элементы внутри контейнера будут занимать всю его высоту */
+}
+
+.modal-edit__upbtn.modal-edit__upbtn_red{
+    background-color: #ff414d;
+    color: #fff;
+}
+.modal-edit__upbtn.modal-edit__upbtn_grey{
+    background-color: #9d9d9d;
+    color: #fff;
+}
+.modal-edit__help_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #a3a3a3;
+    font-family: "MonsterRegular";
+    text-align: center;
+    margin-bottom: 0px;
+}
+div#modal-album-album .modal-edit__body {
+    min-height: 280px;
+    position: relative;
 }
 .modal-edit__title {
     font-family: "MonsterRegular";

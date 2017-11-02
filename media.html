@@ -258,6 +258,7 @@
               </div>
                  <div class="modal-edit__body">
                     <div class="modal-edit__form">
+                     <form method="post" enctype="multipart/form-data">
                        <p class="modal-edit__name">Album title</p>
                        <input type="text" class="modal-edit__field" id="modal-edit__title">
                         <p class="modal-edit__name">Description</p>
@@ -297,6 +298,7 @@
                          
                        </div>  
                        <div class="clearfix"></div> 
+                     </form>
                     </div>
                  </div>
            </div>
@@ -308,26 +310,65 @@
                     <p class="modal-edit__header-text">My photos / Album name</p>
                  </div>
                  <div class="modal-edit__right">
+                    
                     <div class="modal-edit__close">&#10006;</div>
+                    <div class="modal-edit__upbtn modal-edit__upbtn_red" id="modal-edit__add_photo">Add photos</div>
                  </div>
               </div>
                  <div class="modal-edit__body">
                     <div class="modal-edit__form">
                        
-                    <p class="modal-edit__title">Album title</p>
-                    <p class="modal-edit__description">Description</p>
+                    <p class="modal-edit__title" id="modal-edit__new_title">Album title</p>
+                    <p class="modal-edit__description"  id="modal-edit__new_description">Description</p>
                     <div class="center">
                        <span class="modal-edit__description">0 photos</span><a class="modal-edit__description modal-edit__description__red">Edit album</a>
                     </div>
                     
                        <div class="clearfix"></div> 
                     </div>
+                    <p class="modal-edit__help_text">There are no photos in this album</p>
                  </div>
            </div>
         </div>
+         <div class="modal-edit" id="modal-album-add_photo">
+           <div class="modal-edit__content">
+              <div class="modal-edit__header">
+                 <div class="modal-edit__left">
+                    <p class="modal-edit__header-text">My photos / Album name / Manage album</p>
+                 </div>
+                 <div class="modal-edit__right">
+                    
+                    <div class="modal-edit__close">&#10006;</div>
+                    <div class="modal-edit__upbtn modal-edit__upbtn_grey" id="modal-edit__delete_album">Delete album</div>
+                 </div>
+              </div>
+                 <div class="modal-edit__body">
+            
+                     <div class="flex_container">
+                        <div class="col-md-4 modal-edit__album-cover">
+                           <span class="modal-edit__name">Use an album cover</span>
+                           <form action="upload.php" class="dropzone" id="my-dropzone-container_newimg" method="post" enctype="multipart/form-data">
+                              
+                           </form>
+                           <!-- <img src="img/prephoto.jpg" alt="" class=""> -->
+                           
+                        </div>   
+                       <div class="col-md-8">
+                           <span class="modal-edit__name">Album title</span>
+                           <input type="text" class="modal-edit__field" id="">
+                           <span class="modal-edit__name">Description</span>
+                           <textarea name="" class="modal-edit__textarea modal-edit__textarea_media" id=""></textarea>
+                        </div>
+                     </div>
+                
+
+                 </div>
+           </div>
+        </div>        
       <div class="close-wrap"></div>
       <script src="libs/jquery/dist/jquery.min.js"></script>
       <script src="js/libs.min.js"></script>
+       <script src="js/jquery.matchHeight.js"></script>
       <script src="js/main.js"></script>
    </body>
 </html>

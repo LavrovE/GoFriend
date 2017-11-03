@@ -1,4 +1,5 @@
 $('document').ready(function(){
+
     $('#message').click(function(){
         $(".header__box").toggle();
         $(".close-wrap").toggle();
@@ -44,14 +45,38 @@ $('document').ready(function(){
     $('#edit-tags').click(function(){
         $("#modal-tags").toggle();
     }); 
-
+    $('#media_upload').click(function(){
+        $("#modal-album-upload").toggle();
+    }); 
 
 
     $('#create_albums').click(function(){
+    if ( $('#modal-edit__title').val() === "" ) {  
+        $('#album__title__error').html("Add a title");
+        $('#album__description__error').html("Add a description");       
+    }
+    else{
+            var myData = [];
+            var title = $('#modal-edit__title').val();
+            var description = $('#modal-edit__description').val();
+            myData.push(title,description);
+            $('#modal-edit__new_title').html('');
+            $('#modal-edit__new_title').html(title);
+            $('#modal-edit__new_description').html('');
+            $('#modal-edit__new_description').html(description);
+
+        
         $("#modal-album-new").hide();
         $("#modal-album-album").show();
-        var title = $('#modal-edit__title');
-        var description = $('#modal-edit__descriprion');
+    }
+
+         
+       
+    }); 
+    $('#edit_album').click(function(){
+        $("#modal-album-album").hide();
+        $("#modal-album-manage_album").show();
+       
     }); 
 
 
@@ -66,18 +91,18 @@ $('document').ready(function(){
 
 var myObj = [
     {
-        "name": 'eugene',
+        "name": 'euGene',
         "img": 'img/avatars.png',
         "userId": '0'
         
     },
     {
-        "name": 'eugene2',
+        "name": 'vasyA',
         "img": 'img/avatars.png',
         "userId": '1'
     },
     {
-       "name": 'eugene3',
+       "name": 'petya',
         "img": 'img/avatars.png',
         "userId": '2'
     }
@@ -89,9 +114,40 @@ $('.input__removed').keyup(function () {
        
         if ($(this).val().length >3) {
              renderAutocomplete(myObj);
+
         }
         
     });
+
+
+
+
+
+
+function renderAutocomplete(data) {
+    for(var i=0; i<data.length; i++){
+            var text_input = $('.input__removed').val().toUpperCase();
+            var text_db = data[i].name.toUpperCase();
+            // var str = 'http://www.yandex.ru';
+            if(text_db.indexOf(text_input) !== -1) {
+                    $( "<div class='form-edit__name_full' href='#' id='user"+data[i].userId+"'><img src='"+ data[i].img +"'><p class='form-edit__soloname'>"+ data[i].name +"</p></div>" ).prependTo( ".form-edit__names" );
+            }
+            $('.form-edit__names').css('display','block');   
+            // var result = text_input.match(text_db);
+            
+            // if ( ewq.math(qwe)) {
+            //     console.log('laskd');
+            // }
+            // if(  ){
+// console.log(result)
+            // };
+
+
+        
+            
+        }
+};
+
 $('.youtube_link').change(function(){
 var youLink = $('.youtube_link').val().split('=');
 var finalLink = 'http://img.youtube.com/vi/'+ youLink[1] +'/0.jpg' ;
@@ -101,21 +157,9 @@ $( ".youtube_container" ).append('<div class="youtube_img_wrapper"><img  title="
 }
 $('.youtube_img_wrapper').on('click', function(){
     $(this).remove();
-    // console.log('zaza');
 });
-// $('.youtube_img').attr('src',finalLink )
-});
-function renderAutocomplete(data) {
-    for(var i=0; i<data.length; i++){
-            // console.log(myObj[i]);
-            $('.form-edit__names').css('display','block');
-                     // $( "<div class='modal-edit__names_line'></div>" ).prependTo( "#modal-messenger .modal-edit__names" );    
-                     $( "<div class='form-edit__name_full' href='#' id='user"+data[i].userId+"'><img src='"+ data[i].img +"'><p class='form-edit__soloname'>"+ data[i].name +"</p></div>" ).prependTo( ".form-edit__names" );
-            // $( "<p>"+ myObj[i].name +"</p>" ).prependTo( "#modal-messenger .modal-edit__names_line" );
+});   
 
-        }
-};
-   
 if($('.inbox__newmessage').outerHeight() < $('.inbox_width').outerHeight() ){
     var inbox_height = $('.inbox_width').outerHeight();
 $('.inbox__newmessage').css('height',inbox_height);
@@ -163,6 +207,30 @@ event.stopPropagation();
 //   });
 
 // });
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#image').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInput").change(function(){
+    readURL(this);
+});
+
+
+
+
+
+
+
 
 
 
@@ -382,6 +450,36 @@ var myDropzoneLogo = new Dropzone("#my-dropzone-container_logo", {
     }
 });
 
+var myDropzoneNewImg = new Dropzone("#my-dropzone-container_newimg", {
+    addRemoveLinks: true,
+    thumbnailWidth : 200,
+    thumbnailHeight : 200,
+    uploadMultiple: false,
+    maxFiles: 1,
+    maxfilesexceeded: function(file) {
+        this.removeAllFiles();
+        this.addFile(file);
+    },
+    init: function () {
+        this.on('success', function (file) {
+            var $button = $('<button  class="js-open-cropper-modal" data-file-name="' + file.name + '">Crop & Upload</button>');
+            $(file.previewElement).append($button);
+            if (uploadbool == true) {
+            $( ".js-open-cropper-modal" ).trigger( "click" );
+            uploadbool = false;
+            }
+            $(".dz-default").css("display","none");
+            if(radiusbool == false) {
+                $(".dz-image img").removeClass("dz-img-radius");
+                radiusbool == true;
+            }
+
+// alert('test');
+
+        });
+       
+    }
+});
 
 
 

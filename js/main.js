@@ -45,11 +45,17 @@ $('document').ready(function(){
     $('#edit-tags').click(function(){
         $("#modal-tags").toggle();
     }); 
-
+    $('#media_upload').click(function(){
+        $("#modal-album-upload").toggle();
+    }); 
 
 
     $('#create_albums').click(function(){
-        if ($('#modal-edit__title').val() != ""){
+    if ( $('#modal-edit__title').val() === "" ) {  
+        $('#album__title__error').html("Add a title");
+        $('#album__description__error').html("Add a description");       
+    }
+    else{
             var myData = [];
             var title = $('#modal-edit__title').val();
             var description = $('#modal-edit__description').val();
@@ -59,16 +65,20 @@ $('document').ready(function(){
             $('#modal-edit__new_description').html('');
             $('#modal-edit__new_description').html(description);
 
-        }
+        
         $("#modal-album-new").hide();
         $("#modal-album-album").show();
+    }
+
+         
        
     }); 
-    $('#modal-edit__add_photo').click(function(){
+    $('#edit_album').click(function(){
         $("#modal-album-album").hide();
-        $("#modal-album-add_photo").show();
+        $("#modal-album-manage_album").show();
        
     }); 
+
 
 
 // $('.ac_results').before('#name');
@@ -197,6 +207,30 @@ event.stopPropagation();
 //   });
 
 // });
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#image').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInput").change(function(){
+    readURL(this);
+});
+
+
+
+
+
+
+
 
 
 

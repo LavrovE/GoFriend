@@ -2229,7 +2229,7 @@ form#my-dropzone-container_photo {
   -moz-display:flex;
   -webkit-display:flex;
   -o-display:flex;
- 
+ margin-top: 16px;
 
   -moz-flex-direction: row; /* Элементы внутри контейнера будут позиционироваться горизонтально */
   -moz-align-items: stretch; /* Элементы внутри контейнера будут занимать всю его высоту */
@@ -2238,7 +2238,99 @@ form#my-dropzone-container_photo {
    -webkit-flex-direction: row; /* Элементы внутри контейнера будут позиционироваться горизонтально */
   -webkit-align-items: stretch; /* Элементы внутри контейнера будут занимать всю его высоту */
 }
+.input-file-row-1:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
 
+.input-file-row-1{
+    display: inline-block;
+    margin-top: 25px;
+    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+html[xmlns] .input-file-row-1{
+    display: block;
+}
+
+* html .input-file-row-1 {
+    height: 1%;
+}
+button#save_change {
+    width: auto;
+    padding: 0px 10px;
+}
+.upload-file-container { 
+    position: relative;
+    width: auto;
+    height: 97%;
+    overflow: hidden;
+    /* background: url(http://i.imgur.com/AeUEdJb.png) top center no-repeat; */
+    background-position: top center;
+    background-repeat: no-repeat;
+    float: none;
+    margin-left: 23px;
+    background-size: contain;
+    width: 100%;
+} 
+
+.upload-file-container:first-child { 
+  margin-left: 0;
+} 
+
+.upload-file-container > img {
+    width: 100%;
+    height: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.upload-file-container-text{
+font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #719d2b;
+    line-height: 17px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-file-container-text > span{
+  border-bottom: 1px solid #719d2b;
+  cursor: pointer;
+}
+
+.upload-file-container input  { 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 1px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+#modal-album-manage_album .modal-edit__textarea_media {
+    height: 120px;
+}
 .modal-edit__upbtn.modal-edit__upbtn_red{
     background-color: #ff414d;
     color: #fff;
@@ -2256,6 +2348,11 @@ form#my-dropzone-container_photo {
     font-family: "MonsterRegular";
     text-align: center;
     margin-bottom: 0px;
+}
+.modal-edit__error {
+    color: #ff415c;
+    font-family: "MonsterRegular";
+    padding: 4px 0px;
 }
 div#modal-album-album .modal-edit__body {
     min-height: 280px;

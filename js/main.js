@@ -1,4 +1,21 @@
 $('document').ready(function(){
+    function burger(action, windowAction){
+        action.click(function(){
+            if(windowAction.css('display') == 'none') {
+                windowAction.slideDown(300);
+            }
+            else {
+                windowAction.slideUp(300);
+            }
+        });
+    }
+    function optionBurger(){
+        let clickOpen = $('.burgerButton');
+        clickOpen.css('cursor', 'pointer');
+        let burgerShow = $('.burgerShow').css('display', 'none');
+        burger(clickOpen, burgerShow);
+    }
+    optionBurger().click(burger());
 
     $('#message').click(function(){
         $(".header__box").toggle();

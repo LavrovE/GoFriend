@@ -1626,6 +1626,68 @@
   resize: vertical;
 
 }
+.mt_20{
+	margin-top: 20px;
+}
+.mb_20{
+	margin-bottom: 20px;
+}
+.mt_10{
+margin-top: 10px;
+}
+.mb_10{
+	margin-bottom: 10px;
+}
+.album__img {
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 171px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.album__lock {
+    margin-right: 8px;
+}
+.album__info {
+    position: absolute;
+    padding:0px 15px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+}
+.album__name * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.album__info__left {
+    float: left;
+}
+.album__info__right{
+	float: right;
+
+}
+.album__name p{
+	font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #212121;
+}
+.album__info__count{
+	font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #212121;
+}
+a.album__item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+}
 
 .section-form__btn {
   font-family: "MonsterBold";
@@ -1639,7 +1701,8 @@
   outline: none;
   border: none;
   margin-top: 20px;
-  width: 120px;
+  /*width: 120px;*/
+      padding: 0px 14px;
 }
 #modal-album-new .modal-edit__textarea_media {
     /* height: 45px; */
@@ -2828,6 +2891,72 @@ display: -webkit-box;
   display: none;
 }
 
+.file_upload .dz-default {
+    position: relative;
+}
+/*.file_upload{
+    position: relative;
+    width: 60%;
+    float: right;
+    overflow: hidden;
+      cursor: pointer;
+
+}
+.file_upload > button{
+border:none;
+  cursor: pointer;
+}
+.file_upload > div{
+   cursor: pointer;
+}
+.file_upload input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}*/
+.dz-remove{
+	cursor: pointer;
+}
+#edit_album{
+	cursor: pointer;
+}
+.media__photo__description {
+display: block;
+    width: 100%;
+    /* font-size: 12px; */
+    font-family: "MonsterRegular";
+    font-size: 14px;
+    color: #212121;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    border: 1px solid #d4d4d4;
+    border-top: none;
+    display: none;
+}
+#dz-image_container_upload .media__photo__description {
+display: block;
+}
+#dz-image_container_upload .dz-remove {
+    /* display: none; */
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    color: #002d40;
+        font-family: "MonsterMedium";
+}
+
+#my-dropzone-container_upload, #my-dropzone-container_upload2{
+width: inherit;
+height: inherit;
+border: none;
+position: relative;
+margin-top: 0px;
+float: right;
+}
 .dropdown__btn {
   border: none;
   background: transparent;
@@ -2853,7 +2982,7 @@ display: -webkit-box;
     color: #ff414d;
     text-transform: none;
 }
-.dropdown__btn_inner.dropdown__btn_inner{
+.dropdown__btn_inner.dropdown__btn_inner.dropdown__btn_inner__red{
      font-family: "MonsterRegular";
     font-size: 14px;
     color: #ff414d;
@@ -3158,6 +3287,21 @@ display: inline-block;
 }
 
 @media (max-width: 767px) {
+	.dz-image_container .dz-preview {
+    display: inline-block;
+    width: 47%;
+    font-size: 0px;
+    font-size: 0px;
+    height: auto;
+    margin-right: 6%;
+    margin-top: 20px;
+}
+.dz-image_container .dz-preview:nth-child(4n) {
+    margin-right: inherit;
+}
+.dz-image_container .dz-preview:nth-child(2n) {
+    margin-right: 0px;
+}
   .header__form {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -3356,6 +3500,7 @@ display: inline-block;
     min-height: 235px;
   }
 }
+
 .form-edit__names {
     position: absolute;
     top: 0;

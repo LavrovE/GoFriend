@@ -1,5 +1,7 @@
 $('document').ready(function(){
-
+    $('.opening').on('click', function(){
+        $('.for_close').hide();
+    });
     $('#message').click(function(){
         $(".header__box").toggle();
         $(".close-wrap").toggle();
@@ -49,6 +51,13 @@ $('document').ready(function(){
         $("#modal-album-upload").toggle();
     }); 
 
+    if( $('.album__img').hasClass('locked') ){
+        $('.locked .album__name').prepend( '<img src="img/lock.png" alt="" class="album__lock">' )
+    }
+
+
+
+
 
     $('#create_albums').click(function(){
     if ( $('#modal-edit__title').val() === "" ) {  
@@ -66,7 +75,7 @@ $('document').ready(function(){
             $('#modal-edit__new_description').html(description);
 
         
-        $("#modal-album-new").hide();
+        // $("#modal-album-new").hide();
         $("#modal-album-album").show();
     }
 
@@ -74,12 +83,14 @@ $('document').ready(function(){
        
     }); 
     $('#edit_album').click(function(){
-        $("#modal-album-album").hide();
+        // $("#modal-album-album").hide();
         $("#modal-album-manage_album").show();
        
     }); 
 
-
+    $('#add_album').click(function(){
+        $("#modal-album-albums").show();
+    }); 
 
 // $('.ac_results').before('#name');
 
@@ -358,7 +369,8 @@ var c = 0;
 var uploadbool = true;
 var radiusbool = false;
 
-var myDropzone = new Dropzone("#my-dropzone-container", {
+if ($("form").is("#my-dropzone-container")) {
+  var myDropzone = new Dropzone("#my-dropzone-container", {
     addRemoveLinks: true,
     thumbnailWidth : 290,
     thumbnailHeight : 290,
@@ -383,8 +395,10 @@ var myDropzone = new Dropzone("#my-dropzone-container", {
             }
         });
     }
-});
+});  
+};
 
+if ($("form").is("#my-dropzone-container_photo")) {
 var myDropzonePhoto = new Dropzone("#my-dropzone-container_photo", {
     addRemoveLinks: true,
     thumbnailWidth : 150,
@@ -413,12 +427,84 @@ var myDropzonePhoto = new Dropzone("#my-dropzone-container_photo", {
 
         });
         this.on("addedfile", function(file) { 
-            $('.dz-image_container').append($('.dz-preview'));
+            $('#dz-image_container').append($('.dz-preview'));
          });
     }
 });
+};
+if ($("form").is("#my-dropzone-container_upload")) {
+var myDropzoneAddPhoto = new Dropzone("#my-dropzone-container_upload", {
+    addRemoveLinks: true,
+    thumbnailWidth : 150,
+    thumbnailHeight : 150,
+    uploadMultiple: true,
+    maxFiles: 15,
+    maxfilesexceeded: function(file) {
+        this.removeAllFiles();
+        this.addFile(file);
+    },
+    init: function () {
+        this.on('success', function (file) {
+            var $button = $('<button  class="js-open-cropper-modal" data-file-name="' + file.name + '">Crop & Upload</button>');
+            $(file.previewElement).append($button);
+            if (uploadbool == true) {
+            $( ".js-open-cropper-modal" ).trigger( "click" );
+            uploadbool = false;
+            }
+            $(".dz-default").css("display","none");
+            if(radiusbool == false) {
+                $(".dz-image img").removeClass("dz-img-radius");
+                radiusbool == true;
+            }
 
+// alert('test');
 
+        });
+        this.on("addedfile", function(file) { 
+            $('#dz-image_container_upload').append($('.dz-preview'));
+            
+            // $('#dz-image_container_upload .dz-preview').append($('<input type="text" id="photo_description" name="description" class="media__photo__description" placeholder="Add description...">'));
+         });
+    }
+});
+};
+if ($("form").is("#my-dropzone-container_upload2")) {
+var myDropzoneAddPhoto2 = new Dropzone("#my-dropzone-container_upload2", {
+    addRemoveLinks: true,
+    thumbnailWidth : 150,
+    thumbnailHeight : 150,
+    uploadMultiple: true,
+    maxFiles: 15,
+    maxfilesexceeded: function(file) {
+        this.removeAllFiles();
+        this.addFile(file);
+    },
+    init: function () {
+        this.on('success', function (file) {
+            var $button = $('<button  class="js-open-cropper-modal" data-file-name="' + file.name + '">Crop & Upload</button>');
+            $(file.previewElement).append($button);
+            if (uploadbool == true) {
+            $( ".js-open-cropper-modal" ).trigger( "click" );
+            uploadbool = false;
+            }
+            $(".dz-default").css("display","none");
+            if(radiusbool == false) {
+                $(".dz-image img").removeClass("dz-img-radius");
+                radiusbool == true;
+            }
+
+// alert('test');
+
+        });
+        this.on("addedfile", function(file) { 
+            $('#dz-image_container_upload2').append($('.dz-preview'));
+            $('#modal-album-album .modal-edit__help_text').hide();
+            // $('#dz-image_container_upload .dz-preview').append($('<input type="text" id="photo_description" name="description" class="media__photo__description" placeholder="Add description...">'));
+         });
+    }
+});
+};
+if ($("form").is("#my-dropzone-container_logo")) {
 var myDropzoneLogo = new Dropzone("#my-dropzone-container_logo", {
     addRemoveLinks: true,
     thumbnailWidth : 200,
@@ -449,7 +535,8 @@ var myDropzoneLogo = new Dropzone("#my-dropzone-container_logo", {
        
     }
 });
-
+};
+if ($("form").is("#my-dropzone-container_newimg")) {
 var myDropzoneNewImg = new Dropzone("#my-dropzone-container_newimg", {
     addRemoveLinks: true,
     thumbnailWidth : 200,
@@ -481,7 +568,7 @@ var myDropzoneNewImg = new Dropzone("#my-dropzone-container_newimg", {
     }
 });
 
-
+};
 
 
 

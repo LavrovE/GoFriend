@@ -121,8 +121,8 @@
                               </div>
                               <div class="col-md-6">
                                  <div class="gallery-top__center float-right">
-                                    <button class="gallery-top__btn gallery-top__btn_blue btn" id="edit-album">+ add album</button>
-                                    <button class="gallery-top__btn gallery-top__btn_red" id="media_upload"><img src="img/upload.png" alt="loadfile"> upload</button></div>
+                                    <button class="gallery-top__btn gallery-top__btn_blue btn " id="edit-album">+ add album</button>
+                                    <button class="gallery-top__btn gallery-top__btn_red " id="media_upload"><img src="img/upload.png" alt="loadfile"> upload</button></div>
                               </div>
                            </div>
                         </div>
@@ -246,7 +246,7 @@
             </div>
          </div>
       </div>
-      <div class="modal-edit" id="modal-album-new">
+      <div class="modal-edit for_close" id="modal-album-new">
            <div class="modal-edit__content">
               <div class="modal-edit__header">
                  <div class="modal-edit__left">
@@ -267,7 +267,7 @@
                        <div class="modal-edit__pages mt-30">
                            <span class="modal-edit__excess">Who can view the album?</span>
                             <span class="dropdown">
-                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_1 ">All users</span>
+                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_1 dropdown__btn_inner__red">All users</span>
                           </span>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown__click dropdown__click_1 dropdown__share" href="#">All users</a></li>
@@ -279,7 +279,7 @@
                         <br>
                          <span class="modal-edit__excess">Who comment on the photos?</span>
                             <span class="dropdown">
-                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_share ">All users</span>
+                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_share dropdown__btn_inner__red ">All users</span>
                           </span>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown__click dropdown__click_share dropdown__share" href="#">All users</a></li>
@@ -295,15 +295,15 @@
                       
                        <div class="modal-edit__pages-right right">
                           <span class="modal-edit__close-text mr">cancel</span>
-                           <button class="section-form__btn" id="create_albums">Create albums</button>
-                         
+                           <button class="section-form__btn opening" id="create_albums">Create albums</button>
+                         <!--  -->
                        </div>  
                        <div class="clearfix"></div> 
                     </div>
                  </div>
            </div>
         </div>
-         <div class="modal-edit" id="modal-album-album">
+         <div class="modal-edit for_close" id="modal-album-album">
            <div class="modal-edit__content">
               <div class="modal-edit__header">
                  <div class="modal-edit__left">
@@ -312,7 +312,17 @@
                  <div class="modal-edit__right">
                     
                     <div class="modal-edit__close">&#10006;</div>
-                    <div class="modal-edit__upbtn modal-edit__upbtn_red" id="modal-edit__add_photo">Add photos</div>
+                    <!-- <input name="add_photo" type="file" class="modal-edit__upbtn modal-edit__upbtn_red" id="modal-edit__add_photo"> Add photos -->
+                       <div class="file_upload">
+                          <!-- <button type="button"  class="modal-edit__upbtn modal-edit__upbtn_red" >Add photos</button> -->
+                          <form action="upload.php" class="dropzone dz-clickable" id="my-dropzone-container_upload2" method="post" enctype="multipart/form-data">
+                            <div class="dz-default dz-message">
+                              <span class="modal-edit__upbtn modal-edit__upbtn_red">Add photos</span>
+                            </div>
+                         </form>
+                         
+                          <!-- <input type="file" id="modal-edit__add_photo"> -->
+                     </div>
                  </div>
               </div>
                  <div class="modal-edit__body">
@@ -321,16 +331,19 @@
                     <p class="modal-edit__title" id="modal-edit__new_title">Album title</p>
                     <p class="modal-edit__description"  id="modal-edit__new_description">Description</p>
                     <div class="center">
-                       <span class="modal-edit__description">0 photos</span><a class="modal-edit__description modal-edit__description__red" id="edit_album">Edit album</a>
+                       <span class="modal-edit__description">0 photos</span><a class="modal-edit__description modal-edit__description__red opening" id="edit_album">Edit album</a>
                     </div>
-                    
+                     <div class="dz-image_container" id="dz-image_container_upload2">
+                           
+                         </div>
+                   
                        <div class="clearfix"></div> 
                     </div>
                     <p class="modal-edit__help_text">There are no photos in this album</p>
                  </div>
            </div>
         </div>
-         <div class="modal-edit" id="modal-album-manage_album">
+         <div class="modal-edit for_close" id="modal-album-manage_album">
            <div class="modal-edit__content">
               <div class="modal-edit__header">
                  <div class="modal-edit__left">
@@ -339,7 +352,7 @@
                  <div class="modal-edit__right">
                     
                     <div class="modal-edit__close">&#10006;</div>
-                    <div class="modal-edit__upbtn modal-edit__upbtn_grey" id="modal-edit__delete_album">Delete album</div>
+                    <a class="modal-edit__upbtn modal-edit__upbtn_grey" id="modal-edit__delete_album">Delete album</a>
                  </div>
               </div>
                  <div class="modal-edit__body clearfix">
@@ -382,7 +395,7 @@
                            <div class="modal-edit__pages mt-30">
                            <span class="modal-edit__excess">Who can view the album?</span>
                            <span class="dropdown">
-                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_1 ">All users</span>
+                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_1 dropdown__btn_inner__red ">All users</span>
                           </span>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown__click dropdown__click_1 dropdown__share" href="#">All users</a></li>
@@ -394,7 +407,7 @@
                         <br>
                          <span class="modal-edit__excess">Who comment on the photos?</span>
                             <span class="dropdown">
-                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_share ">All users</span>
+                          <span class="dropdown__btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="dropdown__btn_inner dropdown__btn_inner_share  dropdown__btn_inner__red ">All users</span>
                           </span>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown__click dropdown__click_share dropdown__share" href="#">All users</a></li>
@@ -413,7 +426,7 @@
                  </div>
            </div>
         </div>
-        <div class="modal-edit" id="modal-album-upload">
+        <div class="modal-edit for_close" id="modal-album-upload">
            <div class="modal-edit__content">
               <div class="modal-edit__header">
                  <div class="modal-edit__left">
@@ -421,21 +434,137 @@
                  </div>
                  <div class="modal-edit__right">
                     
-                    <div class="modal-edit__close">&#10006;</div>
-                    <div class="modal-edit__upbtn modal-edit__upbtn_red" id="modal-album__add_photo">Add photos</div>
+                    <div class="modal-edit__close">&#10006;
+                        
+                    </div>
+                    <div class="file_upload">
+                          <!-- <button type="button"  class="modal-edit__upbtn modal-edit__upbtn_red" >Add photos</button> -->
+                          <form action="upload.php" class="dropzone dz-clickable" id="my-dropzone-container_upload" method="post" enctype="multipart/form-data">
+                            <div class="dz-default dz-message">
+                              <span class="modal-edit__upbtn modal-edit__upbtn_red">Add photos</span>
+                            </div>
+                         </form>
+                         
+                          <!-- <input type="file" id="modal-edit__add_photo"> -->
+                     </div>
                  </div>
               </div>
                  <div class="modal-edit__body">
                     <div class="modal-edit__form">
                        
+                         <div class="dz-image_container" id="dz-image_container_upload">
+                           
+                         </div>
                    
-                    
+                     
                        <div class="clearfix"></div> 
+
+
+                        <div class="modal-edit__pages-right left">
+                           <div class="gallery-top__center">
+                              <button class="gallery-top__btn gallery-top__btn_red " id="publish_to_page">PUBLISH TO MY PAGE</button>
+                              <button class="gallery-top__btn gallery-top__btn_blue btn opening" id="add_album">add album</button>
+                           </div>
+                         <!--  -->
+                       </div>
                     </div>
-                    <p class="modal-edit__help_text">There are no photos in this album</p>
+                   
                  </div>
            </div>
-        </div>        
+        </div> 
+        <div class="modal-edit for_close" id="modal-album-albums">
+           <div class="modal-edit__content">
+              <div class="modal-edit__header">
+                 <div class="modal-edit__left">
+                    <p class="modal-edit__header-text">My photos / Add photos</p>
+                 </div>
+                 <div class="modal-edit__right">
+                    
+                    <div class="modal-edit__close">&#10006;
+                        
+                    </div>
+                 </div>
+              </div>
+                 <div class="modal-edit__body">
+                    <div class="modal-edit__form">
+                       
+                        <div class="albums">
+                           <div class="album">
+                              <div class="row">
+                                 <div class="col-sm-4 mb_20">
+                                    <div class="album__img" style="background-image:url(img/prephoto.jpg)">
+                                       <a href="#" class="album__item"></a>
+                                       <div class="album__info">
+                                          <div class="album__info__left">
+                                             <div class="album__name"><p>Album title</p></div>
+                                          </div>
+                                          <div class="album__info__right">
+                                             <p class="album__info__count">33</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-4 mb_20">
+                                    <div class="album__img locked" style="background-image:url(img/album.jpg)">
+                                       <a href="#" class="album__item"></a>
+                                       <div class="album__info">
+                                          <div class="album__info__left">
+                                             <div class="album__name"><p>Album title</p></div>
+                                          </div>
+                                          <div class="album__info__right">
+                                             <p class="album__info__count">33</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-4 mb_20">
+                                    <div class="album__img locked" style="background-image:url(img/album.jpg)">
+                                       <a href="#" class="album__item"></a>
+                                       <div class="album__info">
+                                          <div class="album__info__left">
+                                             <div class="album__name"><p>Album title</p></div>
+                                          </div>
+                                          <div class="album__info__right">
+                                             <p class="album__info__count">33</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-4 mb_20">
+                                    <div class="album__img locked" style="background-image:url(img/album.jpg)">
+                                       <a href="#" class="album__item"></a>
+                                       <div class="album__info">
+                                          <div class="album__info__left">
+                                             <div class="album__name"><p>Album title</p></div>
+                                          </div>
+                                          <div class="album__info__right">
+                                             <p class="album__info__count">33</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+
+                                 
+
+                              </div>
+                           </div>
+                        </div>
+                     
+                       <div class="clearfix"></div> 
+
+
+                        <div class="modal-edit__pages-right right">
+                           <div class="gallery-top__right">
+                              <button class="gallery-top__btn gallery-top__btn_red opening " id="modal_albums_close">CLOSE</button>
+                           </div>
+                         <!--  -->
+                       </div>
+                    </div>
+                   
+                 </div>
+           </div>
+        </div>          
       <div class="close-wrap"></div>
       <script src="libs/jquery/dist/jquery.min.js"></script>
       <script src="js/libs.min.js"></script>

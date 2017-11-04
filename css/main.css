@@ -2921,6 +2921,9 @@ border:none;
 .dz-remove{
 	cursor: pointer;
 }
+.album {
+    margin-top: 20px;
+}
 #edit_album{
 	cursor: pointer;
 }

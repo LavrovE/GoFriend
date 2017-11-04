@@ -2155,12 +2155,29 @@ textarea.form-edit__field.min_he {
 
 .modal-edit__header-text {
   font-family: "MonsterMedium";
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 0px;
   color: #002d40;
   float: left;
 }
 
+.breadcrumbz{
+  font-family: "MonsterMedium";
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #002d40;
+    float: left;
+    cursor:pointer;
+}
+.breadcrumbz__divider{
+      font-family: "MonsterMedium";
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #002d40;
+    float: left;
+    margin:0px 5px;
+    cursor: pointer;
+}
 .modal-edit__close {
   float: right;
   color: #ff414d;

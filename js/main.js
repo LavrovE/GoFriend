@@ -91,7 +91,9 @@ $('document').ready(function(){
     $('#add_album').click(function(){
         $("#modal-album-albums").show();
     }); 
-
+ $('#bread_to_name').click(function(){
+        $("#modal-album-album").show();
+    }); 
 // $('.ac_results').before('#name');
 
 //     $('#name').autocomplete(['Женя', 'Витя', 'Гриша', 'Аня', 'Петя'], {

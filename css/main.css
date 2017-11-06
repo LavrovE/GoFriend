@@ -3613,6 +3613,10 @@ cursor: pointer;
 /*# sourceMappingURL=../css/main.css.map */
 
 /*PAGE FORUM*/
+.wrapper-forum .section-blog .section-blog__header-center {
+  display: inline-flex;
+  width: 100%;
+}
 .wrapper-forum .section-blog .section-blog__box .section-blog__left .section-blog__thumbnail {
   max-width: 110px;
   max-height: 110px;
@@ -4070,6 +4074,65 @@ cursor: pointer;
 .landing-footer-sub .title-text {
   font-family: 'MonsterRegular';
 }
+/*SECTION NEWS FEED*/
+.wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__left .section-blog__thumbnail {
+  max-width: 170px;
+  max-height: 170px;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog .section-blog__comments-date {
+  float: unset;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block {
+  margin-left: 188px;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .item-link {
+  color: #002d40;
+  font-size: 16px;
+  margin-right: 5px;
+  font-family: 'MonsterMedium';
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .item-link:hover {
+  color: #002d40;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__wrap .section-blog__box-title {
+  margin-top: 0;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__wrap .section-blog__comments-date_left {
+  margin-top: 0;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__box .section-blog__wrap .section-blog__comments-text-sub {
+  font-family: 'MonsterEBold';
+  margin-top: 10px;
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .icon-arrow-circle {
+  top: calc(100% - 10px);
+}
+.wrapper-newsfeed-b .item-content .left-content {
+  float: left;
+}
+.wrapper-newsfeed-b .item-content .left-content .block-img .img-item {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+}
+.wrapper-newsfeed-b .item-content .left-content {
+  float: left;
+}
+.wrapper-newsfeed-b .item-content .left-content .block-head {
+  margin-left: 15px;
+  padding: 15px 0;
+}
+.wrapper-newsfeed-b .item-content .left-content .block-head .title-head {
+  font-size: 18px;
+  font-family: 'MonsterRegular';
+}
+.wrapper-newsfeed-b .item-content .left-content .block-head .title-head b {
+  font-family: 'MonsterMedium'; 
+}
+.wrapper-newsfeed-b .item-content .right-content {
+  float: right;
+}
 /*GLOBAL*/
 .wrapper-custum {
   width: 100%;
@@ -4181,7 +4244,11 @@ left:32px;
   color: #fff !important;
   font-weight: bold;
 }
-/*ICON*/
+/*#ICON*/
+.icon-base {
+  display: inline-table;
+  cursor: pointer;
+}
 .icon-arrow-circle {
     display: block;
     position: absolute;
@@ -4191,10 +4258,6 @@ left:32px;
     color: #ececec;
     right: 0;
     top: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -4263,12 +4326,6 @@ left:32px;
 @media screen and (max-width: 1100px) {
   .forum-menu {
     padding-right: 0;
-  }
-  .wrapper-forum .section-blog .section-blog__header {
-    padding-bottom: 20px;
-  }
-  .wrapper-forum .section-blog .section-blog__header-center {
-    display: block;
   }
   .wrapper-forum .section-blog .section-blog__comments-date {
     text-align: left;

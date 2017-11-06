@@ -2,6 +2,25 @@ $('document').ready(function(){
     $('.opening').on('click', function(){
         $('.for_close').hide();
     });
+    function burger(action, windowAction){
+        action.click(function(){
+            if(windowAction.css('display') == 'none') {
+                windowAction.slideDown(300);
+            }
+            else {
+                windowAction.slideUp(300);
+            }
+        });
+    }
+    function optionBurger(){
+        let clickOpen = $('.burgerButton');
+        clickOpen.css('cursor', 'pointer');
+        let burgerShow = $('.burgerShow').css('display', 'none');
+        burger(clickOpen, burgerShow);
+    }
+    if (optionBurger() !== undefined)
+        optionBurger().click(burger());
+
     $('#message').click(function(){
         $(".header__box").toggle();
         $(".close-wrap").toggle();
@@ -90,10 +109,10 @@ $('document').ready(function(){
 
     $('#add_album').click(function(){
         $("#modal-album-albums").show();
-    }); 
+    });
  $('#bread_to_name').click(function(){
         $("#modal-album-album").show();
-    }); 
+    });
 // $('.ac_results').before('#name');
 
 //     $('#name').autocomplete(['Женя', 'Витя', 'Гриша', 'Аня', 'Петя'], {
@@ -397,7 +416,7 @@ if ($("form").is("#my-dropzone-container")) {
             }
         });
     }
-});  
+});
 };
 
 if ($("form").is("#my-dropzone-container_photo")) {
@@ -462,9 +481,9 @@ var myDropzoneAddPhoto = new Dropzone("#my-dropzone-container_upload", {
 // alert('test');
 
         });
-        this.on("addedfile", function(file) { 
+        this.on("addedfile", function(file) {
             $('#dz-image_container_upload').append($('.dz-preview'));
-            
+
             // $('#dz-image_container_upload .dz-preview').append($('<input type="text" id="photo_description" name="description" class="media__photo__description" placeholder="Add description...">'));
          });
     }
@@ -498,7 +517,7 @@ var myDropzoneAddPhoto2 = new Dropzone("#my-dropzone-container_upload2", {
 // alert('test');
 
         });
-        this.on("addedfile", function(file) { 
+        this.on("addedfile", function(file) {
             $('#dz-image_container_upload2').append($('.dz-preview'));
             $('#modal-album-album .modal-edit__help_text').hide();
             // $('#dz-image_container_upload .dz-preview').append($('<input type="text" id="photo_description" name="description" class="media__photo__description" placeholder="Add description...">'));

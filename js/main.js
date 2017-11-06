@@ -28,6 +28,7 @@ $('document').ready(function(){
 				else {
 					buttonOpenMenu.css('height', '45px');	
 					buttonOpenMenu.css('overflow', 'hidden');
+					where.find($('.icon-arrow-forum')).css('transform', 'rotate(90deg)');
 				}
 		}
 		var click_ShowNewsBlock = $('.actionbutton-showmenu')

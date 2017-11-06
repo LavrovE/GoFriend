@@ -4085,6 +4085,9 @@ cursor: pointer;
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block {
   margin-left: 188px;
 }
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .icon-base.icon-arrow-circle .icon-arrow-forum {
+  transform: rotate(90deg);
+}
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .item-link {
   color: #002d40;
   font-size: 16px;
@@ -4107,8 +4110,21 @@ cursor: pointer;
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .icon-arrow-circle {
   top: calc(100% - 10px);
 }
+/*WRAPPER B*/
+.wrapper-newsfeed-b .section-blog__box {
+  padding-top: 0;
+}
+.wrapper-newsfeed-b .item-content {
+  margin-top: 20px;
+}
 .wrapper-newsfeed-b .item-content .left-content {
   float: left;
+}
+.wrapper-newsfeed-b a {
+  color: #002d40;
+}
+.wrapper-newsfeed-b a:hover {
+  color: #002d40; 
 }
 .wrapper-newsfeed-b .item-content .left-content .block-img .img-item {
   width: 60px;
@@ -4118,6 +4134,7 @@ cursor: pointer;
 }
 .wrapper-newsfeed-b .item-content .left-content {
   float: left;
+  width: 70%;
 }
 .wrapper-newsfeed-b .item-content .left-content .block-head {
   margin-left: 15px;
@@ -4127,11 +4144,26 @@ cursor: pointer;
   font-size: 18px;
   font-family: 'MonsterRegular';
 }
+.wrapper-newsfeed-b .item-content .left-content .block-head .title-head a {
+  font-family: 'MonsterRegular'; 
+}
 .wrapper-newsfeed-b .item-content .left-content .block-head .title-head b {
   font-family: 'MonsterMedium'; 
 }
 .wrapper-newsfeed-b .item-content .right-content {
   float: right;
+  width: 30%;
+  font-size: 17px;
+  font-family: 'MonsterRegular';
+  padding: 15px 0;
+  line-height: 1.5;
+}
+.wrapper-newsfeed-b .item-content .right-content span {
+  font-family: 'MonsterRegular';
+  margin-left: 15px
+}
+.wrapper-newsfeed-b .item-content .right-content i {
+  line-height: 1.5;
 }
 /*GLOBAL*/
 .wrapper-custum {

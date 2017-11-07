@@ -40,6 +40,49 @@ $('document').ready(function(){
 			showNewsBlock($('.wrapper-newsfeed'));
 		});
 
+
+		function dropdownElement(whereOpen, whatClick) {
+			whereOpen.find($('.dropdownBlock'));
+			whatClick.click(function(){
+				if(whereOpen.css('display') == 'none') {
+					whereOpen.slideDown(500);
+				}
+				else {
+					whereOpen.slideUp(500);
+				}
+			});
+		}
+		// LANDING PAGE
+		dropdownElement($('#wrapper-offer-block'), $('.OpenDropdownBlock'));
+		dropdownElement($('#wrapper-form'), $('.OpenDropdownForm'));
+
+		dropdownElement($('.dropdownBlock'), $('.OpenDropdownBlock'));
+		// END | dropdownElement
+
+		// FADE EFFECT
+		function fadeEffect(whereOpen, whatClick) {
+			whereOpen.find($('.fadeEffect'));
+			whatClick.click(function(){
+				if(whereOpen.css('display') == 'none') {
+					whereOpen.fadeIn(1000);
+				}
+				else {
+					whereOpen.fadeOut(1000);
+				}
+			});
+		}
+		fadeEffect($('#wrapper-thanck'), $('.activeFadeThanks'));
+		// END | fadeEffect
+
+		function anchorSlideTo(whereClick, whereTo) {
+			whereClick.find($('a[href^="#anchorSlideToButton"]'));
+			whereClick.click(function(){
+				$('html, body').animate({scrollTop: $('.anchorSlideHere').offset().top - 50}, 1000);
+			});
+		}
+		anchorSlideTo($('.fliper-card'), $('#wrapper-offer-block'));
+		// anchorSlideTo($('#wrapper-offer-block'), $('#wrapper-form'));
+
     if (optionBurger() !== undefined)
 		optionBurger().click(burger());
 
@@ -78,7 +121,7 @@ $('document').ready(function(){
     $('#edit-contacts').click(function(){
         $("#modal-contacts").toggle();
     });
-   
+
     $('#edit-company').click(function(){
         $("#modal-company").toggle();
     });
@@ -87,10 +130,10 @@ $('document').ready(function(){
     });
     $('#edit-tags').click(function(){
         $("#modal-tags").toggle();
-    }); 
+    });
     $('#media_upload').click(function(){
         $("#modal-album-upload").toggle();
-    }); 
+    });
 
     if( $('.album__img').hasClass('locked') ){
         $('.locked .album__name').prepend( '<img src="img/lock.png" alt="" class="album__lock">' )
@@ -101,9 +144,9 @@ $('document').ready(function(){
 
 
     $('#create_albums').click(function(){
-    if ( $('#modal-edit__title').val() === "" ) {  
+    if ( $('#modal-edit__title').val() === "" ) {
         $('#album__title__error').html("Add a title");
-        $('#album__description__error').html("Add a description");       
+        $('#album__description__error').html("Add a description");
     }
     else{
             var myData = [];
@@ -115,19 +158,19 @@ $('document').ready(function(){
             $('#modal-edit__new_description').html('');
             $('#modal-edit__new_description').html(description);
 
-        
+
         $("#modal-album-new").hide();
         $("#modal-album-album").show();
     }
 
-         
-       
-    }); 
+
+
+    });
     $('#edit_album').click(function(){
         $("#modal-album-album").hide();
         $("#modal-album-manage_album").show();
-       
-    }); 
+
+    });
 
     $('#add_album').click(function(){
         $("#modal-album-albums").show();
@@ -148,7 +191,7 @@ var myObj = [
         "name": 'euGene',
         "img": 'img/avatars.png',
         "userId": '0'
-        
+
     },
     {
         "name": 'vasyA',
@@ -164,13 +207,13 @@ var myObj = [
 
 $('.input__removed').keyup(function () {
      // console.log(myObj.length)
-   
-       
+
+
         if ($(this).val().length >3) {
              renderAutocomplete(myObj);
 
         }
-        
+
     });
 
 
@@ -186,9 +229,9 @@ function renderAutocomplete(data) {
             if(text_db.indexOf(text_input) !== -1) {
                     $( "<div class='form-edit__name_full' href='#' id='user"+data[i].userId+"'><img src='"+ data[i].img +"'><p class='form-edit__soloname'>"+ data[i].name +"</p></div>" ).prependTo( ".form-edit__names" );
             }
-            $('.form-edit__names').css('display','block');   
+            $('.form-edit__names').css('display','block');
             // var result = text_input.match(text_db);
-            
+
             // if ( ewq.math(qwe)) {
             //     console.log('laskd');
             // }
@@ -197,8 +240,8 @@ function renderAutocomplete(data) {
             // };
 
 
-        
-            
+
+
         }
 };
 
@@ -243,7 +286,7 @@ event.stopPropagation();
 // $('.cross').on("click", function(){
 //     $('.forma_wrapper2_shares').removeClass('active');
 //   $('.forma_wrapper_shares').removeClass('active');
-    
+
 //       $('.bg').fadeOut(300);
 //       $('body').removeClass('modal-open');
 //       $(document).off("click");
@@ -251,7 +294,7 @@ event.stopPropagation();
 // $(document).on("click", function(){
 //     $('.forma_wrapper2_shares').removeClass('active');
 //   $('.forma_wrapper_shares').removeClass('active');
-    
+
 //       $('.bg').fadeOut(300);
 //       $('body').removeClass('modal-open');
 //       $(document).off("click");
@@ -291,7 +334,7 @@ $("#imgInput").change(function(){
 $(document).on("click", function(){
    $('.form-edit__names').empty();
    $('.form-edit__names').css('display','none');
-     
+
 });
 $('.form-edit__names').on("click",function(event){
 event.stopPropagation();
@@ -314,9 +357,9 @@ $('.input__removed').val(newInput);
   });
 
 
-    
 
-    
+
+
 
 
     $('.modal-edit__close, .modal-edit__close-text').click(function(){
@@ -336,7 +379,7 @@ $('.input__removed').val(newInput);
         var text;
         text = $(this,".dropdown__click_2").text();
         $(".dropdown__btn_inner_2").html(text);
-    }); 
+    });
     $('.owl-carousel').owlCarousel({
         nav:true,
         navText: ["<img src='img/prev.png'>","<img src='img/next.png'>"],
@@ -375,7 +418,7 @@ var swiper = new Swiper('.popup .swiper-container', {
 $('.popup .close_window, .overlay').click(function (){
     $('.popup, .overlay').css({'opacity':'0', 'visibility':'hidden'});
   });
-  
+
   $(this).keydown(function(eventObject){
     if (eventObject.which == 27){
       $('.popup, .overlay').css({'opacity':'0', 'visibility':'hidden'});
@@ -391,7 +434,7 @@ $('.popup .close_window, .overlay').click(function (){
 
 
 
-    
+
 });
 
 //Cropp avatar 
@@ -469,7 +512,7 @@ var myDropzonePhoto = new Dropzone("#my-dropzone-container_photo", {
 // alert('test');
 
         });
-        this.on("addedfile", function(file) { 
+        this.on("addedfile", function(file) {
             $('#dz-image_container').append($('.dz-preview'));
          });
     }
@@ -572,7 +615,7 @@ var myDropzoneLogo = new Dropzone("#my-dropzone-container_logo", {
 // alert('test');
 
         });
-       
+
     }
 });
 };
@@ -604,7 +647,7 @@ var myDropzoneNewImg = new Dropzone("#my-dropzone-container_newimg", {
 // alert('test');
 
         });
-       
+
     }
 });
 

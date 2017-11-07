@@ -4088,11 +4088,21 @@ cursor: pointer;
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .icon-base.icon-arrow-circle .icon-arrow-forum {
   transform: rotate(90deg);
 }
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .block-logo {
+  max-width: 40px;
+  display: inline-grid;
+  margin-right: 5px;
+  padding-top: 2px;
+}
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .item-link {
   color: #002d40;
   font-size: 16px;
   margin-right: 5px;
   font-family: 'MonsterMedium';
+}
+.wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title a {
+  display: inline-block;
+  color: #002d40;
 }
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .head-title .item-link:hover {
   color: #002d40;
@@ -4104,7 +4114,7 @@ cursor: pointer;
   margin-top: 0;
 }
 .wrapper-forum.wrapper-newsfeed .section-blog__box .section-blog__wrap .section-blog__comments-text-sub {
-  font-family: 'MonsterEBold';
+  font-family: 'MonsterMedium';
   margin-top: 10px;
 }
 .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block .icon-arrow-circle {
@@ -4324,6 +4334,10 @@ left:32px;
 }
 /*MEDIA*/
 @media screen and (max-width: 1200px) {
+  .section__title_blog-header {
+    text-decoration: center;
+    margin: 0;
+  }
   .wrapper-custum {
     padding: 0 90px;
   }
@@ -4368,6 +4382,13 @@ left:32px;
   .forum-menu .menu .menu-nav .block-search .section-blog__form-search {
     width: 100%;
   }
+  .wrapper-forum .section-blog .section-blog__header {
+    padding: 20px 0;
+  }
+  .wrapper-forum .section-blog .section-blog__header-center .section-blog__form-search {
+    margin-top: 0;
+  }
+
   .forum-menu .menu .menu-nav .tag-element {
     width: 25%;
     margin-bottom: 17px;
@@ -4462,6 +4483,44 @@ left:32px;
     float: none;
 }
   /*bad idea*/
+  .wrapper-forum .section-blog .section-blog__header-center .section-blog__form .pull-right {
+    width: 100%;
+  }
+  .wrapper-forum .section-blog .section-blog__header-center .section-blog__form .section-blog__form-search {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .wrapper-forum .section-blog .section-blog__header-center .section-blog__form .header__search {
+    width: 100%;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__wrap .section-blog__box-title {
+    font-size: 18px;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__left .section-blog__thumbnail {
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .wrapper-forum .section-blog .section-blog__header-center {
+    display: table;
+    margin: 0 auto;
+    height: auto;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__left {
+    width: 100%;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__left .section-blog__thumbnail {
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog__wrap .section-blog__comments-block {
+    margin: 0;
+  }
+  .wrapper-forum.wrapper-newsfeed .section-blog .section-blog__box .section-blog__wrap .icon-arrow-circle {
+    top: calc(100% - 10px);
+  }
+  .wrapper-newsfeed-b .section-blog__padding {
+    padding: 0 22px;
+  }
   .header-landing .wrapper-custum {
     padding-top: 20px;
   }
@@ -4471,7 +4530,6 @@ left:32px;
   }
   .wrapper-forum .section-blog .section-blog__header {
     padding: 20px;
-    padding-top: 0;
   }
   .wrapper-custum {
     padding: 0 20px;
@@ -4603,6 +4661,14 @@ left:32px;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 5px;
+  }
+  .wrapper-forum .section__title_blog-header {
+    width: 100%;
+  }
+  .wrapper-newsfeed-b .item-content .left-content,
+  .wrapper-newsfeed-b .item-content .right-content {
+    float: unset;
+    width: 100%;
   }
 }
 @media screen and (max-width: 450px) {

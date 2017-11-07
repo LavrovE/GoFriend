@@ -36,6 +36,48 @@ $('document').ready(function(){
 			showNewsBlock($('.wrapper-newsfeed'));
 		});
 
+		function dropdownElement(whereOpen, whatClick) {
+			whereOpen.find($('.dropdownBlock'));
+			whatClick.click(function(){
+				if(whereOpen.css('display') == 'none') {
+					whereOpen.slideDown(500);
+				}
+				else {
+					whereOpen.slideUp(500);
+				}
+			});
+		}
+		// LANDING PAGE
+		dropdownElement($('#wrapper-offer-block'), $('.OpenDropdownBlock'));
+		dropdownElement($('#wrapper-form'), $('.OpenDropdownForm'));
+
+		dropdownElement($('.dropdownBlock'), $('.OpenDropdownBlock'));
+		// END | dropdownElement
+
+		// FADE EFFECT
+		function fadeEffect(whereOpen, whatClick) {
+			whereOpen.find($('.fadeEffect'));
+			whatClick.click(function(){
+				if(whereOpen.css('display') == 'none') {
+					whereOpen.fadeIn(1000);
+				}
+				else {
+					whereOpen.fadeOut(1000);
+				}
+			});
+		}
+		fadeEffect($('#wrapper-thanck'), $('.activeFadeThanks'));
+		// END | fadeEffect
+
+		function anchorSlideTo(whereClick, whereTo) {
+			whereClick.find($('a[href^="#anchorSlideToButton"]'));
+			whereClick.click(function(){
+				$('html, body').animate({scrollTop: $('.anchorSlideHere').offset().top - 50}, 1000);
+			});
+		}
+		anchorSlideTo($('.fliper-card'), $('#wrapper-offer-block'));
+		// anchorSlideTo($('#wrapper-offer-block'), $('#wrapper-form'));
+
 		optionBurger().click(burger());
 
 		$('#message').click(function(){
